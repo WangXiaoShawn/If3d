@@ -1,7 +1,12 @@
 '''
-Given input images folders, generate data loader to process inference in batch
-Author: Xiao Wang
-Data: 11.21.2024
+This script generates a data loader to process inference in batches, designed for handling 
+high-concurrency scenarios to enable fast rendering. 
+
+Note: This is not directly intended for this project. Please place it in the `demo` folder of 
+the Smirk project and use it from there.
+
+Author: Xiao Wang  
+Date: 11/21/2024
 '''
 
 import torch

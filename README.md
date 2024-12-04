@@ -4,11 +4,18 @@ This repository contains the implementation of intermediate fusion strategies to
 
 ## Repository Structure
 
-`Dataset/` contains the AffectNet dataset files required for training and testing. `Dataset.zip` is the zipped version of the dataset folder for portability. `FinalCheckPoints/` stores the final model checkpoints for each fusion strategy. `FusionConfusionMatrix/` contains confusion matrices generated during the evaluation of different fusion methods. `networks/` includes the model architectures for the backbone and fusion strategies. `picture_*_checkpoints/` stores intermediate checkpoints for different fusion strategies: `picture_attention_fusion_va_*` for attention-based fusion, `picture_linear_fusion_va_*` for linear fusion, `picture_attention_fusion_va_gate_*` for gate-based fusion, and `picture_attention_fusion_va_SPP_*` for Spatial Pyramid Pooling (SPP) fusion checkpoints. `pretrained/` contains pretrained models and weights used for initializing the networks. `PureSmirkcheckpoints/` includes checkpoints for the SMIRK-only inference without fusion. Python scripts include `affectnet_*_train.py` for training specific fusion strategies, `affectnet_*_test.py` for testing specific fusion strategies, and `Smirk_batch_Render.py` for generating SMIRK-based 3D representations.
+`Dataset/` contains the AffectNet dataset files required for training and testing. `Dataset.zip` is the zipped version of the dataset folder for portability. `FinalCheckPoints/` stores the final model checkpoints for each fusion strategy. `FusionConfusionMatrix/` contains confusion matrices generated during the evaluation of different fusion methods. `networks/` includes the model architectures for the backbone and fusion strategies. `picture_*_checkpoints/` stores intermediate checkpoints for different fusion strategies: `team_34_picture_attention_fusion_va_*` for attention-based fusion, `team_34_picture_linear_fusion_va_*` for linear fusion, `team_34_picture_attention_fusion_va_gate_*` for gate-based fusion, and `team_34_picture_attention_fusion_va_SPP_*` for Spatial Pyramid Pooling (SPP) fusion checkpoints. `pretrained/` contains pretrained models and weights used for initializing the networks. `PureSmirkcheckpoints/` includes checkpoints for the SMIRK-only inference without fusion. Python scripts include `affectnet_*_train.py` for training specific fusion strategies, `team_34_affectnet_*_test.py` for testing specific fusion strategies, and `Smirk_batch_Render.py` for generating SMIRK-based 3D representations.
 
 ## Installation
 
-Clone the repository using `git clone <repository_url>` and navigate to the directory using `cd If3d`. Install the required dependencies with `pip install -r requirements.txt`. Extract the dataset using `unzip Dataset.zip -d Dataset`.
+Install the required dependencies with `pip install -r requirements.txt`.
+
+## Database and Checkpoints  
+Due to the large file size, please download the files from my Google Drive: [Google Drive Link](https://drive.google.com/drive/folders/1rvtPt4OlVsmJnp8LObwKhHBse0PqA9r6?usp=drive_link).  
+You will find two files: `Dataset` and `FinalCheckPoints`. Extract these files and replace the `Dataset` and `FinalCheckPoints` folders in this repository to replicate my training and testing experiments.  
+
+## FusionConfusionMatrix  
+All ConfusionMatrix plots are located in the `FusionConfusionMatrix` folder. You can view my results directly from there.  
 
 ## Usage
 
@@ -26,3 +33,33 @@ Intermediate and final checkpoints are stored in their respective directories. T
 
 Performance metrics for different fusion strategies, including Accuracy, F1 Score, Precision, and Recall, are logged during training and testing. Confusion matrices are stored in `FusionConfusionMatrix/`.
 
+## Reference
+
+**Baseline Model**:  
+A Dual-Direction Attention Mixed Feature Network for Facial Expression Recognition  
+Official Implementation: [GitHub Repository](https://github.com/SainingZhang/DDAMFN?tab=readme-ov-file)  
+
+Citation:  
+@article{zhang2023dual,  
+  title={A dual-direction attention mixed feature network for facial expression recognition},  
+  author={Zhang, Saining and Zhang, Yuhang and Zhang, Ye and Wang, Yufei and Song, Zhigang},  
+  journal={Electronics},  
+  volume={12},  
+  number={17},  
+  pages={3595},  
+  year={2023},  
+  publisher={MDPI}  
+}
+
+---
+
+**Smirk Project**:  
+GitHub: [Smirk Repository](https://github.com/georgeretsi/smirk)  
+
+Citation:  
+@inproceedings{SMIRK:CVPR:2024,  
+  title = {3D Facial Expressions through Analysis-by-Neural-Synthesis},  
+  author = {Retsinas, George and Filntisis, Panagiotis P., and Danecek, Radek and Abrevaya, Victoria F. and Roussos, Anastasios and Bolkart, Timo and Maragos, Petros},  
+  booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},  
+  year = {2024}  
+}
