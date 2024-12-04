@@ -19,7 +19,7 @@ All ConfusionMatrix plots are located in the `FusionConfusionMatrix` folder. You
 
 ## Usage
 
-To train a model with a specific fusion strategy, run the corresponding training script. For example, to train with attention-based fusion, use `python affectnet_Origin_Smirk_va_attention_alignment_train.py`. To evaluate a trained model, run the corresponding testing script, such as `python affectnet_Origin_Smirk_va_SPP_alignment_test.py` for SPP-based fusion.
+To train a model with a specific fusion strategy, run the corresponding training script. For example, to train with attention-based fusion, use `python team_34_affectnet_Origin_Smirk_va_attention_alignment_train.py`. To evaluate a trained model, run the corresponding testing script, such as `python team_34_affectnet_Origin_Smirk_va_SPP_alignment_test.py` for SPP-based fusion.
 
 ## Fusion Strategies
 
